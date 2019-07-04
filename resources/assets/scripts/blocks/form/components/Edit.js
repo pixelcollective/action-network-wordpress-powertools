@@ -1,0 +1,91 @@
+const { __ } = wp.i18n
+const { Component, Fragment } = wp.element
+import { SelectControl, ToggleControl } from '@wordpress/components'
+
+class Edit extends Component {
+  constructor() {
+    super(...arguments)
+
+    this.state = {forms: ''}
+    this.onForm = this.onForm.bind(this)
+    this.onToggle = this.onToggle.bind(this)
+    this.fetchForms = this.fetchForms.bind(this)
+    this.selectOptions = this.selectOptions.bind(this)
+    this.selectValue = this.selectValue.bind(this)
+  }
+
+  componentDidMount() {
+    this.fetchForms()
+  }
+
+  fetchForms() {
+    fetch('/graphql', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        query: `{
+          actionNetworkForm {
+            id
+            name
+            embed
+          }
+        }`
+      }),
+    }).then(res => res.json()).then((res) => this.setState({
+      forms: res.data.actionNetworkForm,
+    })).catch(err => console.log(err))
+  }
+
+  onForm(selectId) {
+    this.props.setAttributes({
+      form: this.state.forms.filter(form => {
+        if (form.id == selectId) {
+          return form
+        }
+      }),
+    })
+  }
+
+  onToggle() {
+    this.props.setAttributes({
+      boxed: !this.props.attributes.boxed,
+    })
+  }
+
+  selectOptions() {
+    return this.state.forms.map(form => ({
+      label: form.name,
+      value: form.id,
+    })).concat([{
+      label: 'None selected',
+      value: 'undefined',
+    }])
+  }
+
+  selectValue() {
+    return (this.props.attributes.form && this.props.attributes.form[0])
+    ? this.props.attributes.form[0].id : 'undefined'
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.forms && this.props.attributes.form ? (
+          <Fragment>
+            <SelectControl
+              label={__('Action Network Form', 'tinypixel')}
+              value={this.selectValue()}
+              onChange={this.onForm}
+              options={this.selectOptions()} />
+            <ToggleControl
+              label={__('Boxed', 'tinypixel')}
+              checked={this.props.attributes.boxed}
+              onChange={this.onToggle} />
+          </Fragment>
+        ) : <span>Loading...</span>}
+      </div>
+    )
+  }
+}
+
+export { Edit }
