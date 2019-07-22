@@ -68,9 +68,9 @@ return [
     */
 
     'providers' => [
-        ActionNetwork\Providers\ActionNetworkServiceProvider::class,
-        ActionNetwork\Providers\DatabaseServiceProvider::class,
-        ActionNetwork\Providers\ViewServiceProvider::class,
+        TinyPixel\ActionNetwork\Providers\ActionNetworkServiceProvider::class,
+        TinyPixel\ActionNetwork\Providers\DatabaseServiceProvider::class,
+        TinyPixel\ActionNetwork\Providers\ViewServiceProvider::class,
     ],
 
     /*
