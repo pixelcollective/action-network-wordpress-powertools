@@ -55,7 +55,7 @@ return [
     */
 
     'composers' => [
-        ActionNetwork\Composers\Admin::class,
+        TinyPixel\ActionNetwork\Composers\Admin::class,
     ],
 
     /*

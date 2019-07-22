@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Services\Traits;
+namespace TinyPixel\ActionNetwork\Services\Traits;
 
 trait Helpers
 {

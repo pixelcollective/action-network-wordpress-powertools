@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Services\WordPress;
+namespace TinyPixel\ActionNetwork\Services\WordPress;
 
 /**
  * ActionNetwork\Services\WordPress\GraphQL

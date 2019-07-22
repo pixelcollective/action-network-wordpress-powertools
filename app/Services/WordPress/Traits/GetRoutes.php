@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Services\WordPress\Traits;
+namespace TinyPixel\ActionNetwork\Services\WordPress\Traits;
 
 use \WP_Rest_Response;
 

@@ -12,9 +12,9 @@
  * @see        https://actionnetwork.org/docs
  */
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
-use ActionNetwork\Services\ActionNetwork;
+use \TinyPixel\ActionNetwork\Services\ActionNetwork;
 
 // TODO: Finish refactoring class
 class Person extends ActionNetwork

@@ -1,8 +1,8 @@
 <?php
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
-use ActionNetwork\Services\ActionNetwork;
+use \TinyPixel\ActionNetwork\Services\ActionNetwork;
 
 class Utility extends ActionNetwork
 {

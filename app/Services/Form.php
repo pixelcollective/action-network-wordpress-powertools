@@ -1,8 +1,8 @@
 <?php
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
-use ActionNetwork\Services\ActionNetwork as ActionNetwork;
+use \TinyPixel\ActionNetwork\Services\ActionNetwork as ActionNetwork;
 
 /**
  * Handler for OSDI Form Objects

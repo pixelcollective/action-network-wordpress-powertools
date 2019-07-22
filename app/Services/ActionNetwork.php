@@ -11,9 +11,9 @@
  * @see       https://actionnetwork.org/docs
  **/
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
-use ActionNetwork\Services\Traits;
+use \TinyPixel\ActionNetwork\Services\Traits;
 
 class ActionNetwork
 {

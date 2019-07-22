@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
 /**
  * Handler for Action Network Embed Codes

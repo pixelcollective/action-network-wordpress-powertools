@@ -13,10 +13,10 @@
  * @see        https://actionnetwork.org/docs
  **/
 
-namespace ActionNetwork\Services\WordPress;
+namespace TinyPixel\ActionNetwork\Services\WordPress;
 
-use ActionNetwork\Services\WordPress\Traits\GetRoutes;
-use ActionNetwork\Services\WordPress\Traits\PostRoutes;
+use \TinyPixel\ActionNetwork\Services\WordPress\Traits\GetRoutes;
+use \TinyPixel\ActionNetwork\Services\WordPress\Traits\PostRoutes;
 
 class REST
 {

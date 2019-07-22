@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Services;
+namespace TinyPixel\ActionNetwork\Services;
 
 use function Roots\app;
 
@@ -10,7 +10,6 @@ use function Roots\app;
  * @package   ActionNetwork\Services\Collection
  * @copyright 2019, Tiny Pixel Collective LLC
  * @author    Kelly Mears     <developers@tinypixel.io>
- * @author    Jonathan Kissam <jonathankissam.com>
  * @license   MIT
  * @link      https://github.com/pixelcollective/action-network-toolkit
  * @see       https://actionnetwork.org/docs
