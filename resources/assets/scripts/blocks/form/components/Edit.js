@@ -1,5 +1,5 @@
-const { __ } = wp.i18n
-const { Component, Fragment } = wp.element
+import { __ } from '@wordpress/i18n'
+import { Component, Fragment } from '@wordpress/element'
 import { SelectControl, ToggleControl } from '@wordpress/components'
 
 class Edit extends Component {

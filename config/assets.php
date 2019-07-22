@@ -1,44 +1,27 @@
 <?php
 
+$baseDir = plugin_dir_path(__DIR__);
+$baseUrl = plugin_dir_url(__DIR__);
+
 return [
 
     /*
     |--------------------------------------------------------------------------
-    | Assets Directory URL
+    | Assets Manifests
     |--------------------------------------------------------------------------
     |
-    | The asset manifest contains relative paths to your assets. This URL will
-    | be prepended when using Clover's asset management system. Change this if
-    | you are pushing to a CDN.
+    | Manifests contain lists of assets that are referenced by static keys that
+    | point to dynamic locations, such as a cache-busted location. A manifest
+    | may employ any number of strategies for determining absolute local and
+    | remote paths to assets.
     |
     */
-
-    'uri' => plugins_url('action-network') . '/dist',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Assets Directory Path
-    |--------------------------------------------------------------------------
-    |
-    | The asset manifest contains relative paths to your assets. This path will
-    | be prepended when using Clover's asset management system.
-    |
-    */
-
-    'path' => plugin_dir_path(__DIR__) . 'dist',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Assets Manifest
-    |--------------------------------------------------------------------------
-    |
-    | Your asset manifest is used by Clover to assist WordPress and your views
-    | with rendering the correct URLs for your assets. This is especially
-    | useful for statically referencing assets with dynamically changing names
-    | as in the case of cache-busting.
-    |
-    */
-
-    'manifest' => plugin_dir_path(__DIR__) . 'dist/assets.json',
-
+    'manifests' => [
+        'plugin' => [
+            'strategy' => 'relative',
+            'path'     => "{$baseDir}dist",
+            'uri'      => "{$baseUrl}dist",
+            'manifest' => "{$baseDir}dist/mix-manifest.json",
+        ],
+    ],
 ];

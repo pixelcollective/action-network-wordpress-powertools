@@ -14,9 +14,7 @@ return [
     |
     */
 
-    'paths' => [
-        "{$basePath}resources/views",
-    ],
+    'paths' => ["{$basePath}resources/views"],
 
     /*
     |--------------------------------------------------------------------------
@@ -43,9 +41,7 @@ return [
     |
     */
 
-    'namespaces' => [
-        'actionnetwork' => "{$basePath}resources/views",
-    ],
+    'namespaces' => ['actionnetwork' => "{$basePath}resources/views"],
 
     /*
     |--------------------------------------------------------------------------
@@ -60,7 +56,6 @@ return [
 
     'composers' => [
         ActionNetwork\Composers\Admin::class,
-        ActionNetwork\Composers\Newsletter::class,
     ],
 
     /*

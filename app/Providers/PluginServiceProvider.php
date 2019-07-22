@@ -2,36 +2,59 @@
 
 namespace ActionNetwork\Providers;
 
+// Illuminate framework
+use \Illuminate\Support\Collection;
+
+// Roots
 use \Roots\Acorn\ServiceProvider;
 
 class PluginServiceProvider extends ServiceProvider
 {
     /**
      * Register the plugin with the application container.
+     *
      * @return void
      */
     public function register()
     {
-        /**
-         * Merges configuration with Acorn container instance
-         */
-        $configPath = plugin_dir_path(__DIR__) . '../config';
+        $configFiles = $this->collectConfigFiles(
+            plugin_dir_path(__DIR__) . '../config'
+        );
 
-        $configFiles = [
-            'plugin'        => 'actionnetwork.plugin',
-            'blocks'        => 'actionnetwork.blocks',
-            'actionnetwork' => 'actionnetwork',
-            'assets'        => 'actionnetwork.assets',
-            'view'          => 'actionnetwork.view',
-        ];
+        $configFiles->each(function ($config, $binding) {
+            $this->mergeConfigFrom($config, $binding);
+        });
 
-        foreach ($configFiles as $config => $binding) {
-            $this->mergeConfigFrom("{$configPath}/{$config}.php", $binding);
-        }
+        $providers = $this->app['config']->get('actionnetwork.plugin.providers');
 
-        collect($this->app['config']->get(
-            'actionnetwork.plugin.providers'
-        ))->each(function ($provider) {
+        $this->registerProviders($providers);
+    }
+
+    /**
+     * Collects configuration files
+     *
+     * @param  string $configPath
+     * @return \Illuminate\Support\Collection
+     */
+    public function collectConfigFiles(string $configPath)
+    {
+        return Collection::make([
+            'actionnetwork.plugin' => "{$configPath}/plugin.php",
+            'actionnetwork'        => "{$configPath}/action-network.php",
+            'actionnetwork.assets' => "{$configPath}/assets.php",
+            'actionnetwork.view'   => "{$configPath}/view.php",
+        ]);
+    }
+
+    /**
+     * Registers providers from array
+     *
+     * @param  array $providers
+     * @return void
+     */
+    public function registerProviders(array $providers)
+    {
+        Collection::make($providers)->each(function ($provider) {
             $this->app->register($provider);
         });
     }

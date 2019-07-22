@@ -71,7 +71,6 @@ return [
         ActionNetwork\Providers\ActionNetworkServiceProvider::class,
         ActionNetwork\Providers\DatabaseServiceProvider::class,
         ActionNetwork\Providers\ViewServiceProvider::class,
-        ActionNetwork\Providers\BlockServiceProvider::class,
     ],
 
     /*

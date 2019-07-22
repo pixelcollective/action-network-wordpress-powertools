@@ -20,7 +20,7 @@ class ActionNetworkServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('actionnetwork.asset', function () {
-            return plugins_url('action-network/dist/');
+            return plugins_url('action-network-wordpress-powertools/dist/');
         });
 
         $this->app->singleton('actionnetwork.collection', function () {

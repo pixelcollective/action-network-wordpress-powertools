@@ -11,17 +11,9 @@ class Blocks
 
     public function boot()
     {
-        add_action('init', [
-            $this, 'registerBlockScripts'
-        ]);
-
-        add_action('init', [
-            $this, 'registerBlockStyles'
-        ]);
-
-        add_action('init', [
-            $this, 'registerBlockTypes'
-        ]);
+        add_action('init', [$this, 'registerBlockScripts']);
+        add_action('init', [$this, 'registerBlockStyles']);
+        add_action('init', [$this, 'registerBlockTypes']);
 
         $this->registerBlockCategories();
     }
@@ -38,8 +30,6 @@ class Blocks
         wp_register_style(
             'action-network/front/css',
             $this->app['actionnetwork.asset'] . 'blocks.css',
-            [],
-            '',
         );
     }
 
@@ -48,10 +38,7 @@ class Blocks
         wp_register_script(
             'action-network/editor/js',
             $this->app['actionnetwork.asset'] . 'blocks.js',
-            ['wp-element', 'wp-i18n', 'wp-blocks'],
-            '',
-            null,
-            true,
+            json_decode(file_get_contents(plugin_dir_path(__DIR__ . '/../../../dist/') . 'dist/blocks.deps.json'))
         );
     }
 

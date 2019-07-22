@@ -1,4 +1,4 @@
-const { registerBlockType } = wp.blocks
+import { registerBlockType } from '@wordpress/blocks'
 
 import { Edit as edit } from './components/Edit'
 import { Save as save } from './components/Save'

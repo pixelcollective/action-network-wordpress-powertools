@@ -55,10 +55,7 @@ class ViewServiceProvider extends ServiceProvider
 
     public function getViewEngineCompiler()
     {
-        return $this->app['view']
-            ->getEngineResolver()
-            ->resolve('blade')
-            ->getCompiler();
+        return $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
     }
 
     public function boot()

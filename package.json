@@ -18,7 +18,6 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@wordpress/babel-preset-default": "^4.3.0",
-    "astroturf": "^0.9.6",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.7",
@@ -26,9 +25,8 @@
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
     "laravel-mix": "^4.0.15",
-    "laravel-mix-wp-blocks": "^0.1.5",
+    "laravel-mix-wp-blocks": "^0.2.0",
     "npm-run-all": "^4.1.5",
-    "postcss-hexrgba": "^1.0.1",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.2",
     "postcss-preset-env": "^6.6.0",
@@ -38,7 +36,6 @@
     "run-s": "^0.0.0",
     "sass": "^1.21.0",
     "sass-loader": "7.*",
-    "tailwindcss": "^1.0.1",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
