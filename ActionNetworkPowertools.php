@@ -64,17 +64,20 @@
         // load dependencies
         require $this->plugin->composer;
 
+        $powertools = \TinyPixel\ActionNetwork\Providers\PluginServiceProvider::class;
+
         if (has_action('boot_acorn_standalone')) {
             add_filter('acorn/globals', function () {
                 return true;
             });
+
             $this->app = new \Roots\Acorn\Application(__DIR__);
             $this->app->boot();
             $this->app->registerConfiguredProviders();
-            $this->app->register(\ActionNetwork\Providers\PluginServiceProvider::class);
+            $this->app->register($powertools);
         } else {
-            \Roots\bootloader(function (Application $app) {
-                $app->register(\ActionNetwork\Providers\PluginServiceProvider::class);
+            \Roots\bootloader(function (Application $app) use ($powertools) {
+                $app->register($powertools);
             });
         }
 
