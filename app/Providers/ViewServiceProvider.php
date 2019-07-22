@@ -1,14 +1,21 @@
 <?php
 
-namespace ActionNetwork\Providers;
+namespace TinyPixel\ActionNetwork\Providers;
 
+// Roots
 use Roots\Acorn\ServiceProvider;
 
+/**
+ * View service provider
+ *
+ * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @license MIT
+ * @since   1.0.0
+ */
 class ViewServiceProvider extends ServiceProvider
 {
     /**
-     * Register directives, view paths, composers
-     * with the Roots application container
+     * Registers view support
      *
      * @return void
      */

@@ -1,17 +1,32 @@
 <?php
 
-namespace ActionNetwork\Providers;
+namespace TinyPixel\ActionNetwork\Providers;
 
-use Roots\Acorn\ServiceProvider;
+// Illuminate framework
+use \Illuminate\Database\{
+    DatabaseManager,
+    Eloquent\Model,
+    Eloquent\QueueEntityResolver,
+    Connectors\ConnectionFactory,
+};
 
-use \Illuminate\Database\DatabaseManager;
-use \Illuminate\Database\Eloquent\Model;
-use \Illuminate\Contracts\Queue\EntityResolver;
-use \Illuminate\Database\Connectors\ConnectionFactory;
-use \Illuminate\Database\Eloquent\QueueEntityResolver;
+// Roots
+use \Roots\Acorn\ServiceProvider;
 
+/**
+ * Database service provider
+ *
+ * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @license MIT
+ * @since   0.0.1
+ */
 class DatabaseServiceProvider extends ServiceProvider
 {
+    /**
+     * Registers application services
+     *
+     * @return void
+     */
     public function register()
     {
         Model::clearBootedModels();
@@ -36,14 +51,15 @@ class DatabaseServiceProvider extends ServiceProvider
             return new QueueEntityResolver();
         });
     }
+
+    /**
+     * Boots application services
+     *
+     * @return void
+     */
     public function boot()
     {
-        Model::setConnectionResolver(
-            $this->app['db']
-        );
-
-        Model::setEventDispatcher(
-            $this->app['events']
-        );
+        Model::setConnectionResolver($this->app['db']);
+        Model::setEventDispatcher($this->app['events']);
     }
 }

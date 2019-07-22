@@ -1,18 +1,34 @@
 <?php
 
-namespace ActionNetwork\Providers;
+namespace TinyPixel\ActionNetwork\Providers;
 
-use Roots\Acorn\ServiceProvider;
+// Roots
+use \Roots\Acorn\ServiceProvider;
 
-use \ActionNetwork\Services\ActionNetwork;
-use \ActionNetwork\Services\Embed;
-use \ActionNetwork\Services\Collection;
-use \ActionNetwork\Services\WordPress\GraphQL;
-use \ActionNetwork\Services\WordPress\REST;
-use \ActionNetwork\Services\WordPress\Blocks;
+// Internal
+use \TinyPixel\ActionNetwork\Services\{
+    ActionNetwork,
+    Embed,
+    Collection,
+    WordPress\GraphQL,
+    WordPress\REST,
+    WordPress\Blocks,
+};
 
+/**
+ * Action Network service provider
+ *
+ * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @license MIT
+ * @since   1.0.0
+ */
 class ActionNetworkServiceProvider extends ServiceProvider
 {
+    /**
+     * Registers application services
+     *
+     * @return void
+     */
     public function register()
     {
         $this->app->singleton('actionnetwork', function () {
@@ -44,6 +60,11 @@ class ActionNetworkServiceProvider extends ServiceProvider
         });
     }
 
+    /**
+     * Boots application services
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->app->make('actionnetwork.collection');

@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Plugin Name: Action Network Toolkit
- * Plugin URI:  https://github.com/pixelcollective/action-network-toolkit
+ * Plugin Name: Action Network WordPress Powertools
+ * Plugin URI:  https://github.com/pixelcollective/action-network-wp-powertools
  * Description: WordPress support and extras for the Action Network platform
- * Version:     0.2.0
+ * Version:     0.3.0
  * Author:      Tiny Pixel Collective, LLC
  * Author URI:  https://tinypixel.dev
  * License:     MIT License
  * Text Domain: tinypixel
  * Domain Path: /resources/lang
  *
- * @package ActionTools
- * @
+ * @package    WordPress
+ * @subpackage Action Network WordPress Powertools
  */
 
 (new class {

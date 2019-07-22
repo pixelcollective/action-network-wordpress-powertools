@@ -1,9 +1,17 @@
 <?php
 
-namespace ActionNetwork\Composers;
+namespace TinyPixel\ActionNetwork\Composers;
 
-use Roots\Acorn\View\Composer;
+// Roots
+use \Roots\Acorn\View\Composer;
 
+/**
+ * Admin view composer
+ *
+ * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @license MIT
+ * @since   1.0.0
+ */
 class Admin extends Composer
 {
     /**

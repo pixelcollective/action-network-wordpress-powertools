@@ -1,6 +1,6 @@
 <?php
 
-namespace ActionNetwork\Providers;
+namespace TinyPixel\ActionNetwork\Providers;
 
 // Illuminate framework
 use \Illuminate\Support\Collection;
@@ -8,10 +8,17 @@ use \Illuminate\Support\Collection;
 // Roots
 use \Roots\Acorn\ServiceProvider;
 
+/**
+ * Plugin service provider
+ *
+ * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @license MIT
+ * @since   1.0.0
+ */
 class PluginServiceProvider extends ServiceProvider
 {
     /**
-     * Register the plugin with the application container.
+     * Registers the plugin with the application container.
      *
      * @return void
      */
@@ -47,7 +54,7 @@ class PluginServiceProvider extends ServiceProvider
     }
 
     /**
-     * Registers providers from array
+     * Registers arrayed providers
      *
      * @param  array $providers
      * @return void
