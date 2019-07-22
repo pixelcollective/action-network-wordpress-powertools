@@ -1,4 +1,5 @@
 const mix = require('laravel-mix')
+
 require('laravel-mix-wp-blocks')
 
 const postCssPlugins = [
@@ -7,11 +8,10 @@ const postCssPlugins = [
   require('postcss-preset-env'),
 ]
 
-mix.block('./resources/assets/scripts/blocks.js', './dist/blocks.js')
-.postCss('./resources/assets/styles/blocks.css', './dist/blocks.css', postCssPlugins)
+mix.block('resources/assets/scripts/blocks.js', './dist')
+mix.postCss('resources/assets/styles/blocks.css', './dist', postCssPlugins)
 
 .browserSync({proxy: 'https://example.valet'})
 
-.setPublicPath(
-  './dist',
-)
+.setPublicPath('./dist')
+.setResourceRoot('./resources')

@@ -27,6 +27,11 @@ class ComposerStaticInit51aeaf84d8da8ff8e60ab855f0833141
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'T' => 
+        array (
+            'TinyPixel\\ActionNetwork\\Tests\\' => 30,
+            'TinyPixel\\ActionNetwork\\' => 24,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php73\\' => 23,
@@ -85,11 +90,6 @@ class ComposerStaticInit51aeaf84d8da8ff8e60ab855f0833141
             'Composer\\Installers\\' => 20,
             'Carbon\\' => 7,
         ),
-        'A' => 
-        array (
-            'ActionNetwork\\Tests\\' => 20,
-            'ActionNetwork\\' => 14,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -102,6 +102,14 @@ class ComposerStaticInit51aeaf84d8da8ff8e60ab855f0833141
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'TinyPixel\\ActionNetwork\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'TinyPixel\\ActionNetwork\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'Symfony\\Polyfill\\Php73\\' => 
         array (
@@ -238,14 +246,6 @@ class ComposerStaticInit51aeaf84d8da8ff8e60ab855f0833141
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
-        'ActionNetwork\\Tests\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/tests',
-        ),
-        'ActionNetwork\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

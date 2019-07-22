@@ -40,9 +40,7 @@
     public function run()
     {
         if ($this->preflight()) {
-            add_action('after_setup_theme', [
-                $this, 'registerWithAcorn',
-            ]);
+            add_action('after_setup_theme', [$this, 'registerWithAcorn']);
         }
     }
 

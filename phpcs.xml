@@ -3,7 +3,7 @@
   <description>Roots Coding Standards</description>
 
   <!-- Scan these files -->
-  <file>plugin-name.php</file>
+  <file>ActionNetworkPowertools.php</file>
   <file>src</file>
   <file>config</file>
   <file>resources/views</file>
