@@ -2,12 +2,32 @@
 
 namespace Roots\Acorn\View;
 
-use Illuminate\View\View;
 use Illuminate\Support\Str;
+use Illuminate\Support\Fluent;
+use Illuminate\View\View;
 
 abstract class Composer
 {
+    /**
+     * List of views to receive data by this composer
+     *
+     * @var string[]
+     */
     protected static $views;
+
+    /**
+     * Current view
+     *
+     * @var \Illuminate\View\View
+     */
+    protected $view;
+
+    /**
+     * Current view data
+     *
+     * @var \Illuminate\Support\Fluent
+     */
+    protected $data;
 
     /**
      * List of views served by this composer
@@ -28,26 +48,37 @@ abstract class Composer
     /**
      * Compose the view before rendering.
      *
-     * @param \Illuminate\View\View $view;
+     * @param  \Illuminate\View\View $view
      * @return void
      */
     public function compose(View $view)
     {
-        $view->with(array_merge(
-            $this->with($view->getData(), $view),
-            $view->getData(),
-            $this->override($view->getData(), $view)
-        ));
+        $this->view = $view;
+        $this->data = new Fluent($view->getData());
+
+        $view->with($this->merge());
+    }
+
+    /**
+     * Data to be merged and passed to the view before rendering.
+     *
+     * @return array
+     */
+    protected function merge()
+    {
+        return array_merge(
+            $this->with(),
+            $this->view->getData(),
+            $this->override()
+        );
     }
 
     /**
      * Data to be passed to view before rendering
      *
-     * @param array $data
-     * @param \Illuminate\View\View $view
      * @return array
      */
-    public function override($data, $view)
+    protected function with()
     {
         return [];
     }
@@ -55,11 +86,9 @@ abstract class Composer
     /**
      * Data to be passed to view before rendering
      *
-     * @param array $data
-     * @param \Illuminate\View\View $view
      * @return array
      */
-    public function with($data, $view)
+    protected function override()
     {
         return [];
     }

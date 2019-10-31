@@ -19,6 +19,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Global Helpers
+    |--------------------------------------------------------------------------
+    |
+    | This value enables the usage of various Acorn helpers without the need
+    | to specify a namespace. This defaults to false as to not pollute the
+    | global namespace.
+    |
+    */
+
+    'globals' => false,
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------
     |
@@ -59,6 +72,7 @@ return [
         // Roots\Acorn\View\ViewServiceProvider::class,
         // Roots\Sage\SageServiceProvider::class,
         // Illuminate\Database\DatabaseServiceProvider::class,
+        // Illuminate\Cache\CacheServiceProvider::class,
     ],
 
     /*

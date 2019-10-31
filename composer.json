@@ -22,8 +22,8 @@
     "require": {
         "php": "^7.1",
         "composer/installers": "^1.0",
-        "illuminate/support": "^5.7",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "roots/acorn": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.2",
