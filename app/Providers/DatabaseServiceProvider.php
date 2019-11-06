@@ -1,17 +1,13 @@
 <?php
-
 namespace TinyPixel\ActionNetwork\Providers;
 
-// Illuminate framework
+use Roots\Acorn\ServiceProvider;
 use \Illuminate\Database\{
     DatabaseManager,
     Eloquent\Model,
     Eloquent\QueueEntityResolver,
     Connectors\ConnectionFactory,
 };
-
-// Roots
-use \Roots\Acorn\ServiceProvider;
 
 /**
  * Database service provider

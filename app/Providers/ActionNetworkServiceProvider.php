@@ -1,12 +1,8 @@
 <?php
-
 namespace TinyPixel\ActionNetwork\Providers;
 
-// Roots
-use \Roots\Acorn\ServiceProvider;
-
-// Internal
-use \TinyPixel\ActionNetwork\Services\{
+use Roots\Acorn\ServiceProvider;
+use TinyPixel\ActionNetwork\Services\{
     ActionNetwork,
     Embed,
     Collection,

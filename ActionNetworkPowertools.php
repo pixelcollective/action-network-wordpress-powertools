@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Action Network WordPress Powertools
  * Plugin URI:  https://github.com/pixelcollective/action-network-wp-powertools
@@ -10,11 +9,7 @@
  * License:     MIT License
  * Text Domain: tinypixel
  * Domain Path: /resources/lang
- *
- * @package    WordPress
- * @subpackage Action Network WordPress Powertools
  */
-
 (new class {
 
     /**
@@ -25,10 +20,6 @@
         $this->plugin = (object) [
             'composer' => __DIR__ . '/vendor/autoload.php',
             'config'   => __DIR__ . '/config/plugin.php',
-            'requires' => (object) [
-                'php'  => '7.2',
-                'wp'   => '5.2',
-            ],
         ];
 
         return $this;

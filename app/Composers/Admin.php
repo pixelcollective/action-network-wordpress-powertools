@@ -30,7 +30,7 @@ class Admin extends Composer
      * @param  \Illuminate\View\View $view
      * @return array
      */
-    public function with($data, $view)
+    public function with()
     {
         return $data;
     }
